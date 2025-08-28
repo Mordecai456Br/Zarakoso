@@ -1,0 +1,22 @@
+* {
+    font-family: Helvetica, sans-serif;
+
+}
+
+button{
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: chartreuse;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 500px;
+    margin: 0 auto;
+}
+
