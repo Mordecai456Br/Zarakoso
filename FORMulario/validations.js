@@ -5,6 +5,8 @@ const dateInput = document.querySelector('#dateInput');
 const emailInput = document.querySelector('#emailInput');
 const cpfInput = document.querySelector('#cpfInput');
 
+import { validarCPF } from './validations2.js';
+
 dateInput.addEventListener("input", function () {
 
     let cleaned = this.value.replace(/\D/g, '');
@@ -36,6 +38,8 @@ cpfInput.addEventListener("input", function () {
  digito 1 -> pega os 9 primeiros numeros e multiplica o primeiro, por 10,
  o segundo por 9.. até chegar em *2
 */
+
+/*
 function validarCPF(cpf) {
 
     cpf = cpf.replace(/\D/g, '');
@@ -70,4 +74,4 @@ function validarCPF(cpf) {
     console.log("cpf valido");
     return true
 }
-
+*/
