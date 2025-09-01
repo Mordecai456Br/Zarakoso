@@ -5,7 +5,7 @@ const dateInput = document.querySelector('#dateInput');
 const emailInput = document.querySelector('#emailInput');
 const cpfInput = document.querySelector('#cpfInput');
 
-import { validarCPF } from './validations2.js';
+import { validarCPF, validarDate } from './validations2.js';
 
 dateInput.addEventListener("input", function () {
 
@@ -15,6 +15,7 @@ dateInput.addEventListener("input", function () {
         .replace(/^(\d{2}\/\d{2})(\d)/, '$1/$2')
         .slice(0, 10);
     this.value = cleaned;
+    validarDate(this.value);
 });
 
 cpfInput.addEventListener("input", function () {
