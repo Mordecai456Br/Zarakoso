@@ -35,18 +35,10 @@ function validarCPF(cpf) {
 
 }
 
-import dayjs from 'https://cdn.skypack.dev/dayjs';
 
 function validarDate(date) {
-    const format = 'DD/MM/YYYY';
-
-    if (!dayjs(date, format, true).isValid()) {
-        console.log('Wrong format or invalid date');
-        return false;
-    }
-
-    console.log('valid date');
-    return true;
+  const regex = /0[0-9]|1[0-9]|2[0-9]|3[01]/
+  
 }
 
 export { validarCPF, validarDate}
