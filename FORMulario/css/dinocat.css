@@ -4,9 +4,9 @@
     padding: 1.25rem;
     flex-direction: column;
     align-items: center;
-    gap: 1.25rem;
-    min-height: 520px;
-    max-height: 520px;
+    justify-content: space-between;
+    min-height: 480px;
+    max-height: 480px;
     border-radius: 1.125rem;
     border: 2px solid #D7D7D7;
     background: #FFF;
@@ -14,6 +14,8 @@
 }
 .dinocat-img-text {
     display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
 }
 .dinocat-img {
     width: 15.5rem;

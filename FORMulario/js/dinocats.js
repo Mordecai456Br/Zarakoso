@@ -7,12 +7,13 @@ function gerarDinocards(dinos) {
         
         const divDinocat_ImgAndText = document.createElement('divDinocat_ImgAndText');
         divDinocat_ImgAndText.classList.add('dinocat-img-text')
+        card.appendChild(divDinocat_ImgAndText);
         
         const img = document.createElement('img');
         img.classList.add('dinocat-img');
         img.src = dino.img;
         img.alt = dino.name;
-        card.appendChild(img);
+        divDinocat_ImgAndText.appendChild(img);
 
         const textDiv = document.createElement('div');
         textDiv.classList.add('dinocat-text-div');
@@ -27,7 +28,7 @@ function gerarDinocards(dinos) {
 
         textDiv.appendChild(name);
         textDiv.appendChild(description);
-        card.appendChild(textDiv);
+        divDinocat_ImgAndText.appendChild(textDiv);
 
         const button = document.createElement('button');
         button.classList.add('dinocat-choose');
