@@ -1,0 +1,74 @@
+.dinocat-card {
+    display: flex;
+    width: 18rem;
+    padding: 1.25rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+
+    border-radius: 1.125rem;
+    border: 2px solid #D7D7D7;
+    background: #FFF;
+
+    margin: 40px;
+}
+
+.dinocat-img {
+    width: 15.5rem;
+    height: 15.5rem;
+    aspect-ratio: 1/1;
+
+    border-radius: 0.75rem;
+    border: 1px solid #E4E4E4;
+    object-fit: cover;
+}
+
+.dinocat-text-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    align-self: stretch;
+}
+
+.dinocat-name {
+    color: #000;
+    font-family: Inter;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.dinocat-description {
+    align-self: stretch;
+
+    color: #767676;
+    text-align: center;
+    font-family: Inter;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.dinocat-choose {
+    display: flex;
+    width: 12.75rem;
+    height: 3.25rem;
+    padding: 1.25rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+
+    border-radius: 0.75rem;
+    border: 2px solid #D7D7D7;
+    background: #FFF;
+
+    color: #3F3F3F;
+    font-family: Inter;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href="/FORMulario/css/form.css">
+    <link rel='stylesheet' href="/FORMulario/css/dinocat.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <div class="form-header">
+            <p>Register</p>
+        </div>
+        <div class="inputs-div">
+            <!-- Name input -->
+            <div class="input">
+                <div class="input-header">
+                    <p class="label-text" id="label-text1">Your name</p>
+                    <p class="required-text" id="required-text-name">*</p>
+                    <p class="response-text" id="response-text-name">name is required</p>
+                </div>
+                <div class="input-icon">
+                    <img class="icon hidden" src="" alt="">
+                    <input type="text" id="name-input" placeholder="Dinocat Pergolano">
+                </div>
+            </div>
+
+            <!-- Birthday input -->
+            <div class="input">
+                <div class="input-header">
+                    <p class="label-text" id="label-text2">Your birthday</p>
+                    <p class="required-text" id="required-text-date">*</p>
+                    <p class="response-text" id="response-text-date"></p>
+                </div>
+
+                <div class="input-icon">
+                    <img class="icon" src="/FORMulario/assets/imgs/callendar.png" alt="callendar-icon">
+                    <input type="text" id="date-input" placeholder="dd/mm/yyyy">
+                </div>
+            </div>
+
+            <!-- CPF input -->
+            <div class="input">
+                <div class="input-header">
+                    <p class="label-text" id="label-text-CPF">CPF</p>
+                    <p class="required-text" id="required-text-CPF">*</p>
+                    <p class="response-text" id="response-text-CPF"></p>
+                </div>
+
+                <div class="input-icon">
+                    <img class="icon hidden" src="" alt="">
+                    <input type="text" id="cpf-input" placeholder="xxx.xxx.xxx-xx">
+                </div>
+            </div>
+            <!-- Description input -->
+            <div class="input">
+                <div class="input-header">
+                    <p class="label-text" id="label-text-description">Describe your love to dinocats</p>
+                </div>
+
+                <div class="input-icon">
+                    <img class="icon hidden" src="" alt="">
+                    <input type="text" id="description-input" placeholder="i love dinocats">
+                </div>
+            </div>
+
+            <div class="buttons-div">
+                <button class="button cancel-button">Cancel</button>
+                <button class="button create-button">Create</button>
+            </div>
+
+
+        </div>
+        </div>
+        </div>
+    </form>
+
+    <div class="dinocat-slider">
+        <div class="dinocat-card">
+            <img class="dinocat-img" src="/FORMulario/assets/imgs/superlaserssauro.jpg" alt="superlaserssauro">
+            <div class="dinocat-text-div">
+                <p class="dinocat-name">Superlaserssauro</p>
+                <p class="dinocat-description">Raios de laser pelos olhos</p>
+            </div>
+            <button class="dinocat-choose">Choose</button>
+        </div>
+    </div>
+</body>
+<script type="module" src="/FORMulario/js/validations.js"></script>
+<script type="module" src="/FORMulario/js/dinocats.js"></script>
+
+</html>
