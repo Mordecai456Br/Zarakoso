@@ -2,10 +2,25 @@
 const nameInput = document.querySelector('#name-input');
 const dateInput = document.querySelector('#date-input');
 const cpfInput = document.querySelector('#cpf-input');
+const nameRequired = document.querySelector('#required-text-name');
+const nameResponse = document.querySelector('#response-text-name');
 
 
 
 import { validarCPF, validarDate } from '../js/validations2.js';
+
+nameInput.addEventListener("input", function () {
+    nameRequired.classList.remove("hidden")
+    
+    if (this.value.length < 3) {
+        nameResponse.textContent = "name must be more than 3"
+        return false;
+    } else {
+        nameResponse.textContent = "✅"
+        nameRequired.classList.add("hidden")
+    } 
+   
+})
 
 dateInput.addEventListener("input", function () {
 
