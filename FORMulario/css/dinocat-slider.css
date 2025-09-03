@@ -2,17 +2,18 @@
     display: flex;
     min-height: 40rem;
     height: 600px;
-    max-width: 100%;
-    width: 50%;
+    width: 100%;
+    
     overflow: hidden;
     
      border: 2px solid #eeeeee;
      border-radius: 1.125rem;
     align-items: center;
     justify-content: center;
+    padding: 0rem 2rem;
     
 }
-.dinocat-track {
+/*.dinocat-track {
     display: flex;
     padding:40px;
     will-change: transform;
@@ -20,13 +21,27 @@
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
     align-items: center;
-    justify-content: left;
+    justify-content: center;
     height: 652px;
      border-radius: 1.125rem;
     background-color: rgb(255, 255, 255);
     border: 2px solid #eeeeee;
     
 }
+*/
+.dinocat-track {
+     display: flex;
+    gap: 1rem;
+    justify-content: left;
+    align-items: center;
+    min-width: 100%;
+     overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    
+    padding: 1rem 2rem;
+}
+    
 /* Esconde barra de scroll no Chrome, Edge e Safari */
 .dinocat-track::-webkit-scrollbar {
     display: none;
@@ -35,15 +50,6 @@
 .dinocat-track {
     scrollbar-width: none;
 }
-
-.dinocat-wrapper {
-    display: flex;
-    gap: 1rem;
-    justify-content: left;
-    align-items: center;
-    min-width: 100%;
-}
-
 
 .pagination {
     position: absolute;

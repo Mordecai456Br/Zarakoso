@@ -1,5 +1,5 @@
 function gerarDinocards(dinos) {
-    const containers = document.querySelectorAll('.dinocat-wrapper'); // <-- alterado
+    const containers = document.querySelectorAll('.dinocat-track'); // <-- alterado
 
     containers.forEach(container => {
 
