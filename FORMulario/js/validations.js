@@ -5,9 +5,19 @@ const cpfInput = document.querySelector('#cpf-input');
 const nameRequired = document.querySelector('#required-text-name');
 const nameResponse = document.querySelector('#response-text-name');
 
+const cancelButton = document.querySelector('#formUsersCancelButton')
 
 
 import { validarCPF, validarDate } from '../js/validations2.js';
+
+
+cancelButton.addEventListener("click", function () {
+    nameInput.value = "";
+    dateInput.value = "";
+    cpfInput.value = "";
+
+});
+
 
 nameInput.addEventListener("input", function () {
     nameRequired.classList.remove("hidden")
