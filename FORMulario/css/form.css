@@ -139,3 +139,38 @@ input {
     height: 1.6171875rem; /* 1.40625rem * 1.15 */
     flex-shrink: 0;
 }
+.buttons-div {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    justify-content: right;
+}
+.button {
+    display: flex;
+    width: 10rem;
+    height: 3.25rem;
+    padding: 1.25rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+
+    border-radius: 0.75rem;
+    border: 2px solid #D7D7D7;
+    background: #FFF;
+
+    color: #3F3F3F;
+    font-family: Inter;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.cancel-button {
+    width: 30%;
+}
+.create-button {
+    width: 40%;
+    background-color: #3CA0F8;
+    color: white;
+    border-color: #62b2f8;
+}

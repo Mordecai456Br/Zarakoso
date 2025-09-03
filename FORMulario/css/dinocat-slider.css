@@ -4,7 +4,7 @@
     width: auto;
     height: 100vh;
     overflow: hidden;
-    background-color: aqua;
+    background-color: rgb(255, 255, 255);
     align-items: center;
     justify-content: center;
     padding: 40px;
@@ -22,7 +22,8 @@
     justify-content: left;
     height: 600px;
      border-radius: 1.125rem;
-    background-color: rgb(0, 255, 21);
+    background-color: rgb(255, 255, 255);
+    border: 2px solid #eeeeee;
     padding: 40px
 }
 /* Esconde barra de scroll no Chrome, Edge e Safari */

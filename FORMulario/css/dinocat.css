@@ -5,8 +5,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    min-height: 480px;
-    max-height: 480px;
+    min-height: 460px;
+    max-height: 460px;
     border-radius: 1.125rem;
     border: 2px solid #D7D7D7;
     background: #FFF;
@@ -21,8 +21,8 @@
     gap: 1.25rem;
 }
 .dinocat-img {
-    width: 15.5rem;
-    height: 15.5rem;
+    width: 13.5rem;
+    height: 13.5rem;
     aspect-ratio: 1/1;
 
     border-radius: 0.75rem;
@@ -78,4 +78,9 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+}
+.dinocat-choose:hover{
+    background-color: #3CA0F8;
+    color: white;
+    border-color: #62b2f8;
 }
