@@ -1,0 +1,47 @@
+.dinocat-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: aqua;
+}
+
+.dinocat-track {
+    display: flex;
+    gap: 1rem;
+    transition: transform 0.3s ease-in-out;
+    will-change: transform;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+/* Esconde barra de scroll no Chrome, Edge e Safari */
+.dinocat-track::-webkit-scrollbar {
+    display: none;
+}
+/* Firefox */
+.dinocat-track {
+    scrollbar-width: none;
+}
+
+
+.dinocat-card {
+    flex: 0 0 auto; 
+    width: 18rem;   
+}
+
+
+.pagination {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.pagination img {
+    width: 2rem;
+    cursor: pointer;
+    pointer-events: all;
+}

@@ -6,20 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href="/FORMulario/css/form.css">
     <link rel='stylesheet' href="/FORMulario/css/dinocat.css">
+    <link rel='stylesheet' href="/FORMulario/css/dinocat-slider.css">
     <title>Document</title>
 </head>
 
 <body>
     <form>
         <div class="form-header">
-            <p>Register</p>
+            <p class="form-title">Register</p>
         </div>
         <div class="inputs-div">
             <!-- Name input -->
             <div class="input">
                 <div class="input-header">
-                    <p class="label-text" id="label-text1">Your name</p>
-                    <p class="required-text" id="required-text-name">*</p>
+                    <div class="name-and-required">
+                        <p class="label-text" id="label-text1">Your name</p>
+                        <p class="required-text" id="required-text-name">*</p>
+                    </div>
                     <p class="response-text" id="response-text-name">name is required</p>
                 </div>
                 <div class="input-icon">
@@ -31,8 +34,10 @@
             <!-- Birthday input -->
             <div class="input">
                 <div class="input-header">
-                    <p class="label-text" id="label-text2">Your birthday</p>
-                    <p class="required-text" id="required-text-date">*</p>
+                    <div class="name-and-required">
+                        <p class="label-text" id="label-text2">Your birthday</p>
+                        <p class="required-text" id="required-text-date">*</p>
+                    </div>
                     <p class="response-text" id="response-text-date"></p>
                 </div>
 
@@ -45,8 +50,10 @@
             <!-- CPF input -->
             <div class="input">
                 <div class="input-header">
-                    <p class="label-text" id="label-text-CPF">CPF</p>
-                    <p class="required-text" id="required-text-CPF">*</p>
+                    <div class="name-and-required">
+                        <p class="label-text" id="label-text-CPF">CPF</p>
+                        <p class="required-text" id="required-text-CPF">*</p>
+                    </div>
                     <p class="response-text" id="response-text-CPF"></p>
                 </div>
 
@@ -74,22 +81,23 @@
 
 
         </div>
-        </div>
-        </div>
+
     </form>
 
     <div class="dinocat-slider">
-        <div class="dinocat-card">
-            <img class="dinocat-img" src="/FORMulario/assets/imgs/superlaserssauro.jpg" alt="superlaserssauro">
-            <div class="dinocat-text-div">
-                <p class="dinocat-name">Superlaserssauro</p>
-                <p class="dinocat-description">Raios de laser pelos olhos</p>
-            </div>
-            <button class="dinocat-choose">Choose</button>
+        <div class="pagination">
+            <img class="arrow-left" src="/FORMulario/assets/imgs/arrow-left.png">
+            <img class="arrow-right" src="/FORMulario/assets/imgs/arrow-right.png">
+        </div>
+
+        <div class="dinocat-track" id="dinocat-track">
+            <!-- Os cards serão gerados aqui -->
         </div>
     </div>
+
 </body>
 <script type="module" src="/FORMulario/js/validations.js"></script>
 <script type="module" src="/FORMulario/js/dinocats.js"></script>
+<script type="module" src="/FORMulario/js/dinocatsSlider.js"></script>
 
 </html>

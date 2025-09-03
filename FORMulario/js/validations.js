@@ -7,7 +7,7 @@ const cpfInput = document.querySelector('#cpf-input');
 
 
 
-import { validarCPF, validarDate } from '../validations2.js';
+import { validarCPF, validarDate } from '../js/validations2.js';
 
 dateInput.addEventListener("input", function () {
 
