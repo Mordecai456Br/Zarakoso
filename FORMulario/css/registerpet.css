@@ -1,0 +1,18 @@
+.inputs-area {
+display: flex;
+padding: 1.25rem 3.125rem;
+align-items: flex-start;
+gap: 3.125rem;
+align-self: stretch;
+}
+.input-icon label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+.inputs-pets {
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+}

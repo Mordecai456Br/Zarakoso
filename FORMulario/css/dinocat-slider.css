@@ -1,30 +1,31 @@
 .dinocat-slider {
     display: flex;
-    position: relative;
-    width: auto;
-    height: 100vh;
+    min-height: 40rem;
+    height: 600px;
+    max-width: 100%;
+    width: 50%;
     overflow: hidden;
-    background-color: rgb(255, 255, 255);
+    
+     border: 2px solid #eeeeee;
+     border-radius: 1.125rem;
     align-items: center;
     justify-content: center;
-    padding: 40px;
     
 }
-
 .dinocat-track {
     display: flex;
-   
+    padding:40px;
     will-change: transform;
     overflow-x: auto;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
     align-items: center;
     justify-content: left;
-    height: 600px;
+    height: 652px;
      border-radius: 1.125rem;
     background-color: rgb(255, 255, 255);
     border: 2px solid #eeeeee;
-    padding: 40px
+    
 }
 /* Esconde barra de scroll no Chrome, Edge e Safari */
 .dinocat-track::-webkit-scrollbar {
@@ -42,8 +43,6 @@
     align-items: center;
     min-width: 100%;
 }
-
-
 
 
 .pagination {

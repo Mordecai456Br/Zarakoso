@@ -86,11 +86,6 @@
             </form>
 
             <div class="dinocat-slider">
-                <div class="pagination">
-                    <img class="arrow-left" src="/FORMulario/assets/imgs/arrow-left.png">
-                    <img class="arrow-right" src="/FORMulario/assets/imgs/arrow-right.png">
-                </div>
-
                 <div class="dinocat-track" id="dinocat-track">
                     <!-- Os cards serão gerados aqui -->
                     <div class="dinocat-wrapper">
@@ -102,7 +97,61 @@
 
 
         <section class="register-pet">
+            <div class="form-header">
+                <p class="form-title">Register</p>
+            </div>
+            <div class="inputs-area">
 
+                <div class="dinocat-card">
+                    <divdinocat_imgandtext class="dinocat-img-text"><img class="dinocat-img"
+                            src="/FORMulario/assets/imgs/jhonnyssauro.jpg" alt="Jhonnyssauro">
+                        <div class="dinocat-text-div">
+                            <p class="dinocat-name">Jhonnyssauro</p>
+                            <p class="dinocat-description">Jhonny versao dinossauro</p>
+                        </div>
+                    </divdinocat_imgandtext><button class="dinocat-choose">Choose</button>
+                </div>
+
+                <div class="inputs-pets">
+                    <!-- Name input -->
+                    <div class="input">
+                        <div class="input-header">
+                            <div class="name-and-required">
+                                <p class="label-text" id="label-text-dinocatname">Dinocat name</p>
+                                <p class="required-text" id="required-text-dinocat-name">*</p>
+                            </div>
+                            <p class="response-text" id="response-text-dinocat-name">name is required</p>
+                        </div>
+                        <div class="input-icon">
+                            <img class="icon hidden" src="" alt="">
+                            <input type="text" id="name-input" placeholder="Dinocat Pergolano">
+                        </div>
+                    </div>
+
+                    <div class="input">
+                        <div class="input-header">
+                            <div class="name-and-required">
+                                <p class="label-text" id="label-text-interesses">Interesses</p>
+                                <p class="required-text">*</p>
+                            </div>
+                            <p class="response-text" id="response-text-interesses"></p>
+                        </div>
+
+                        <div class="input-icon">
+                            <label>
+                                <input type="checkbox" name="interesses" value="futebol"> Futebol
+                            </label>
+                            <label>
+                                <input type="checkbox" name="interesses" value="música"> Música
+                            </label>
+                            <label>
+                                <input type="checkbox" name="interesses" value="games"> Games
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </section>
     </section>
 
@@ -110,5 +159,6 @@
 <script type="module" src="/FORMulario/js/validations.js"></script>
 <script type="module" src="/FORMulario/js/dinocats.js"></script>
 <script type="module" src="/FORMulario/js/dinocatsSlider.js"></script>
+<script type="module" src="/FORMulario/js/forms.js"></script>
 
 </html>

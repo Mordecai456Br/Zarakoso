@@ -18,6 +18,8 @@
 .dinocat-img-text {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 1.25rem;
 }
 .dinocat-img {
@@ -34,6 +36,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    
     gap: 0.5rem;
     align-self: stretch;
 }

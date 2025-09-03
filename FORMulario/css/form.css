@@ -20,6 +20,12 @@ h6 {
     /* 0.375rem * 1.15 */
 }
 
+body {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
 .hidden {
     display: none;
 }
@@ -27,25 +33,20 @@ h6 {
 .register {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     gap: 20px;
-}
-
-.forms {
-    display: flex;
-    flex-direction: column;
 }
 
 
 form {
-    display: inline-flex;
+    display: flex;
     min-height: 40rem;
     height: 600px;
-    max-width: 600px;
+    max-width: 500px;
     width: 50%;
     /* 36.328125rem * 1.15 */
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: start;
     gap: 1.725rem;
     /* 1.5rem * 1.15 */
@@ -84,9 +85,14 @@ form {
 }
 
 input {
-    all: unset;
+    border: none;        /* remove borda padrão */
+    background: none;    /* remove fundo padrão */
+    outline: none;       /* remove contorno ao focar */
+    color: inherit;      /* mantém a cor herdada */
+    font: inherit;       /* mantém a fonte herdada */
     width: 100%;
 }
+
 
 .inputs-div {
     display: flex;
@@ -173,7 +179,7 @@ input {
     height: 1.6171875rem;
     /* 1.40625rem * 1.15 */
     flex-shrink: 0;
-    
+
 }
 
 
@@ -181,15 +187,15 @@ input {
     display: flex;
     width: 10rem;
     height: 3.25rem;
-    padding: 1.25rem;
+
     justify-content: center;
     align-items: center;
     gap: 0.625rem;
-    
+    padding: 1rem 2rem;
     border-radius: 0.75rem;
     border: 2px solid #D7D7D7;
     background: #FFF;
-    
+
     color: #3F3F3F;
     font-family: Inter;
     font-size: 1.25rem;
@@ -200,12 +206,17 @@ input {
 
 .buttons-div {
     display: flex;
-    width: 86%;
-    gap: 20px;
-    justify-content: right;
-    align-self: center;
-    
+    height: auto;
+    width: 85%;
+   
+    gap: 1.2rem;
+    align-items: flex-start;
+    flex-shrink: 0;
+    justify-content: space-between;
+
+
 }
+
 .cancel-button {
     width: 30%;
 }
@@ -215,4 +226,11 @@ input {
     background-color: #3CA0F8;
     color: white;
     border-color: #62b2f8;
+}
+
+.input-icon label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
 }
