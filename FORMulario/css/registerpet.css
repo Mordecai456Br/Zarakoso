@@ -5,14 +5,44 @@ align-items: flex-start;
 gap: 3.125rem;
 align-self: stretch;
 }
+.input-icon {
+  display: flex;
+ 
+  gap: 0.5rem; /* Espaço entre os itens */
+}
+
 .input-icon label {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   font-size: 1rem;
+  white-space: nowrap; /* Mantém o texto de cada label em uma linha só */
 }
+
 .inputs-pets {
     display: flex;
     gap: 0.5rem;
     flex-direction: column;
+}
+
+.input-icon-pets {
+    display: flex;
+    flex-wrap: wrap; /* Permite quebrar linha */
+    width: 21.5625rem; /* Mesmo tamanho do input padrão */
+    padding: 1.078125rem; /* Mesmo padding */
+    align-items: center;
+    gap: 0.5390625rem; /* Mesmo gap */
+    
+    border-radius: 0.646875rem; /* Mesmo arredondamento */
+    border: 1px solid #D7D7D7; /* Mesma borda */
+    background: #FFF; /* Mesmo fundo */
+}
+
+.input-icon-pets label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem; /* Espaço entre checkbox e texto */
+    font-size: 1rem;
+    cursor: pointer;
+    white-space: nowrap; /* Mantém a opção inteira */
 }

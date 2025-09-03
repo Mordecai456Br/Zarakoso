@@ -228,9 +228,3 @@ input {
     border-color: #62b2f8;
 }
 
-.input-icon label {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 1rem;
-}
