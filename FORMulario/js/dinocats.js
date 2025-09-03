@@ -1,10 +1,13 @@
 function gerarDinocards(dinos) {
-    const container = document.getElementById('dinocat-track'); // <-- alterado
+    const container = document.querySelector('.dinocat-wrapper'); // <-- alterado
 
     dinos.forEach(dino => {
         const card = document.createElement('div');
         card.classList.add('dinocat-card');
-
+        
+        const divDinocat_ImgAndText = document.createElement('divDinocat_ImgAndText');
+        divDinocat_ImgAndText.classList.add('dinocat-img-text')
+        
         const img = document.createElement('img');
         img.classList.add('dinocat-img');
         img.src = dino.img;
@@ -45,6 +48,7 @@ const dinos = [
     { name: "Gat-rex", description: "O Clássico T-Rex esta de volta.. minhando", img: "/FORMulario/assets/imgs/gat-rex.jpg" },
     { name: "José", description: "Raio ultrajante pela boca", img: "/FORMulario/assets/imgs/jose.jpg" },
     { name: "Espinogation", description: "Cuidado p nao se espetar", img: "/FORMulario/assets/imgs/espinogation.jpg" },
+    { name: "Brisa", description: "Se protege da brisa com seu casaco", img: "/FORMulario/assets/imgs/brisa.jpg" },
     { name: "😓", description: "Chora no banho", img: "/FORMulario/assets/imgs/sadDinossaur.jpg" },
 ];
 

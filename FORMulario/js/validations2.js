@@ -9,17 +9,17 @@ const response_CPF = document.querySelector('#response-text-CPF');
 
 export { validarCPF, validarDate }
 
-function validarName(){
-    
+function validarName() {
+
 }
 
 function validarDate(date) {
-    
-    if(required_date.classList.contains("hidden")) {
+
+    if (required_date.classList.contains("hidden")) {
         required_date.classList.toggle("hidden");
         response_date.textContent = "";
     }
-    
+
     const currentDate = new Date();
     const currentYear = currentDate.getFullYear();
     const [day, month, year] = date;
@@ -28,20 +28,27 @@ function validarDate(date) {
     if (!regex.test(`${day}/${month}/${year}`)) {
         console.log("Invalid Date");
         response_date.textContent = "Invalid date";
-        
+
         return false;
     }
-    
-    if (parseInt(day, 10) > 29 && month === "02"){
+
+    if (parseInt(day, 10) > 29 && month === "02") {
         console.log("February only have 29 days");
-          response_date.textContent = "February only have 29 days";
-          
-          return false;
-        }
-        if (parseInt(year, 10) < 1900 || parseInt(year,10) > currentYear) {
-            console.log("Invalid year (1900 - Current Year)");
+        response_date.textContent = "February only have 29 days";
+
+        return false;
+    }
+    if (parseInt(year, 10) < 1900 || parseInt(year, 10) > currentYear) {
+        console.log("Invalid year (1900 - Current Year)");
         response_date.textContent = "Invalid year (1900 - Current Year)";
-        
+
+        return false;
+
+    }
+    if (parseInt(year, 10) > (currentYear - 18)) {
+        console.log("You must be +18");
+        response_date.textContent = "You must be +18";
+
         return false;
     }
 
@@ -55,7 +62,7 @@ function validarDate(date) {
 
 function validarCPF(cpf) {
 
-    if(required_CPF.classList.contains("hidden")) {
+    if (required_CPF.classList.contains("hidden")) {
         required_CPF.classList.toggle("hidden");
         response_CPF.textContent = "";
     }

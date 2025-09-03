@@ -2,7 +2,7 @@ const track = document.getElementById('dinocat-track');
 
 track.addEventListener('wheel', (e) => {
     e.preventDefault(); // impede a rolagem vertical padrão
-    track.scrollLeft += e.deltaY * 0.75; // deltaY é quanto a roda moveu verticalmente
+    track.scrollLeft += e.deltaY * 3; // deltaY é quanto a roda moveu verticalmente
 });
 
 

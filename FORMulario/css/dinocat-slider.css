@@ -1,18 +1,25 @@
 .dinocat-slider {
+    display: flex;
     position: relative;
-    width: 100%;
+    width: auto;
+    height: 100vh;
     overflow: hidden;
     background-color: aqua;
+    align-items: center;
+    justify-content: center;
 }
 
 .dinocat-track {
     display: flex;
-    gap: 1rem;
-    transition: transform 0.3s ease-in-out;
+   
     will-change: transform;
     overflow-x: auto;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
+    align-items: center;
+    justify-content: left;
+
+    background-color: rgb(145, 255, 0);
 }
 /* Esconde barra de scroll no Chrome, Edge e Safari */
 .dinocat-track::-webkit-scrollbar {
@@ -23,10 +30,17 @@
     scrollbar-width: none;
 }
 
+.dinocat-wrapper {
+    display: flex;
+    gap: 1rem;
+    justify-content: left;
+    align-items: center;
+    min-width: 100%;
+}
 
 .dinocat-card {
     flex: 0 0 auto; 
-    width: 18rem;   
+    width: 18rem; 
 }
 
 
@@ -38,6 +52,7 @@
     justify-content: space-between;
     transform: translateY(-50%);
     pointer-events: none;
+    
 }
 
 .pagination img {
