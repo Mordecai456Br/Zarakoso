@@ -1,8 +1,6 @@
 
 const nameInput = document.querySelector('#name-input');
 const dateInput = document.querySelector('#date-input');
-
-const emailInput = document.querySelector('#emailInput');
 const cpfInput = document.querySelector('#cpf-input');
 
 

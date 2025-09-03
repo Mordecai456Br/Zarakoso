@@ -12,6 +12,9 @@
     background: #FFF;
 
 }
+.dinocat-card:hover {
+    transform: scale(1.03);
+}
 .dinocat-img-text {
     display: flex;
     flex-direction: column;

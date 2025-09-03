@@ -1,9 +1,11 @@
-const track = document.getElementById('dinocat-track');
+const tracks = document.querySelectorAll('.dinocat-track');
 
-track.addEventListener('wheel', (e) => {
-    e.preventDefault(); // impede a rolagem vertical padrão
-    track.scrollLeft += e.deltaY * 3; // deltaY é quanto a roda moveu verticalmente
-});
+tracks.forEach(track => {
+    track.addEventListener('wheel', (e) => {
+        e.preventDefault(); // impede a rolagem vertical padrão
+        track.scrollLeft += e.deltaY * 3; // deltaY é quanto a roda moveu verticalmente
+    });
+})
 
 
 

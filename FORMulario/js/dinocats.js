@@ -1,42 +1,45 @@
 function gerarDinocards(dinos) {
-    const container = document.querySelector('.dinocat-wrapper'); // <-- alterado
+    const containers = document.querySelectorAll('.dinocat-wrapper'); // <-- alterado
 
-    dinos.forEach(dino => {
-        const card = document.createElement('div');
-        card.classList.add('dinocat-card');
-        
-        const divDinocat_ImgAndText = document.createElement('divDinocat_ImgAndText');
-        divDinocat_ImgAndText.classList.add('dinocat-img-text')
-        card.appendChild(divDinocat_ImgAndText);
-        
-        const img = document.createElement('img');
-        img.classList.add('dinocat-img');
-        img.src = dino.img;
-        img.alt = dino.name;
-        divDinocat_ImgAndText.appendChild(img);
+    containers.forEach(container => {
 
-        const textDiv = document.createElement('div');
-        textDiv.classList.add('dinocat-text-div');
+        dinos.forEach(dino => {
+            const card = document.createElement('div');
+            card.classList.add('dinocat-card');
 
-        const name = document.createElement('p');
-        name.classList.add('dinocat-name');
-        name.textContent = dino.name;
+            const divDinocat_ImgAndText = document.createElement('divDinocat_ImgAndText');
+            divDinocat_ImgAndText.classList.add('dinocat-img-text')
+            card.appendChild(divDinocat_ImgAndText);
 
-        const description = document.createElement('p');
-        description.classList.add('dinocat-description');
-        description.textContent = dino.description;
+            const img = document.createElement('img');
+            img.classList.add('dinocat-img');
+            img.src = dino.img;
+            img.alt = dino.name;
+            divDinocat_ImgAndText.appendChild(img);
 
-        textDiv.appendChild(name);
-        textDiv.appendChild(description);
-        divDinocat_ImgAndText.appendChild(textDiv);
+            const textDiv = document.createElement('div');
+            textDiv.classList.add('dinocat-text-div');
 
-        const button = document.createElement('button');
-        button.classList.add('dinocat-choose');
-        button.textContent = 'Choose';
-        card.appendChild(button);
+            const name = document.createElement('p');
+            name.classList.add('dinocat-name');
+            name.textContent = dino.name;
 
-        container.appendChild(card);
-    });
+            const description = document.createElement('p');
+            description.classList.add('dinocat-description');
+            description.textContent = dino.description;
+
+            textDiv.appendChild(name);
+            textDiv.appendChild(description);
+            divDinocat_ImgAndText.appendChild(textDiv);
+
+            const button = document.createElement('button');
+            button.classList.add('dinocat-choose');
+            button.textContent = 'Choose';
+            card.appendChild(button);
+
+            container.appendChild(card);
+        });
+    })
 }
 
 
