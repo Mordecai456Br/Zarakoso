@@ -20,15 +20,15 @@ cancelButton.addEventListener("click", function () {
 
 nameInput.addEventListener("input", function () {
     nameRequired.classList.remove("hidden")
-    
+
     if (this.value.length < 3) {
         nameResponse.textContent = "name must be more than 3"
         return false;
     } else {
         nameResponse.textContent = "✅"
         nameRequired.classList.add("hidden")
-    } 
-   
+    }
+
 })
 
 dateInput.addEventListener("input", function () {
@@ -92,6 +92,7 @@ export function validarName(name) {
 
 export function validarDate(date) {
 
+
     if (required_date.classList.contains("hidden")) {
         required_date.classList.toggle("hidden");
         response_date.textContent = "";
@@ -99,35 +100,66 @@ export function validarDate(date) {
 
     const currentDate = new Date();
     const currentYear = currentDate.getFullYear();
-    const [day, month, year] = date;
+    const [dayStr, monthStr, yearStr] = date;
 
     const regex = /^(0[1-9]|1[0-9]|2[0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/
-    if (!regex.test(`${day}/${month}/${year}`)) {
+    if (!regex.test(`${dayStr}/${monthStr}/${yearStr}`)) {
         console.log("Invalid Date");
         response_date.textContent = "Invalid date";
 
         return false;
     }
+    const day = parseInt(dayStr, 10)
+    const month = parseInt(monthStr, 10)
+    const year = parseInt(yearStr, 10)
 
-    if (parseInt(day, 10) > 29 && month === "02") {
-        console.log("February only have 29 days");
-        response_date.textContent = "February only have 29 days";
-
-        return false;
-    }
-    if (parseInt(year, 10) < 1900 || parseInt(year, 10) > currentYear) {
+    
+    if (year < 1900 || year > currentYear) {
         console.log("Invalid year (1900 - Current Year)");
         response_date.textContent = "Invalid year (1900 - Current Year)";
 
         return false;
 
     }
-    if (parseInt(year, 10) > (currentYear - 18)) {
+
+    if (year > (currentYear - 18)) {
         console.log("You must be +18");
         response_date.textContent = "You must be +18";
 
         return false;
     }
+
+    function isLeapYear(year) {
+        return (year % 400 === 0) || (year % 4 === 0 && year % 100 !== 0)
+    }
+
+    const maxDays = {
+        1: 31,
+        2: isLeapYear(year) ? 29 : 28,
+        3: 30,
+        4: 31,
+        5: 30,
+        6: 31,
+        7: 30,
+        8: 31,
+        9: 30,
+        10: 31,
+        11: 30,
+        12: 31
+    }
+
+    if (day > maxDays[month]) {
+        response_date.textContent = `Invalid day for this month: max ${maxDays[month]} days`;
+        return false;
+    }
+
+    /* if (parseInt(day, 10) > 29 && month === "02") {
+        console.log("February only have 29 days");
+        response_date.textContent = "February only have 29 days";
+
+        return false;
+    }
+    */
 
     console.log("Valid Date");
     response_date.textContent = "✅";
