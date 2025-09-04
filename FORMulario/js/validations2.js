@@ -1,113 +1,108 @@
-const required_text_date = document.querySelector('.required-text-date');
-const required_date = document.querySelector('#required-text-date');
-const response_date = document.querySelector('#response-text-date');
-
-
-const required_CPF = document.querySelector('#required-text-CPF');
-const response_CPF = document.querySelector('#response-text-CPF');
-
-
-export { validarCPF, validarDate }
-
-function validarName() {
-
+// Função genérica para capturar checkboxes selecionados
+function getCheckedValues(name) {
+    return Array.from(document.querySelectorAll(`input[name="${name}"]:checked`))
+        .map(cb => cb.value);
 }
 
-function validarDate(date) {
+// Validação Interests (mínimo 1)
+export function validarInterests() {
+    const required = document.querySelector('#required-text-interests');
+    const response = document.querySelector('#response-text-interests');
+    const selected = getCheckedValues('interests');
 
-    if (required_date.classList.contains("hidden")) {
-        required_date.classList.toggle("hidden");
-        response_date.textContent = "";
+    if (required.classList.contains("hidden")) {
+        required.classList.remove("hidden");
+        response.textContent = "";
     }
 
-    const currentDate = new Date();
-    const currentYear = currentDate.getFullYear();
-    const [day, month, year] = date;
-
-    const regex = /^(0[1-9]|1[0-9]|2[0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/
-    if (!regex.test(`${day}/${month}/${year}`)) {
-        console.log("Invalid Date");
-        response_date.textContent = "Invalid date";
-
+    if (selected.length < 1) {
+        response.textContent = "Select at least 1 interest";
         return false;
     }
 
-    if (parseInt(day, 10) > 29 && month === "02") {
-        console.log("February only have 29 days");
-        response_date.textContent = "February only have 29 days";
-
-        return false;
-    }
-    if (parseInt(year, 10) < 1900 || parseInt(year, 10) > currentYear) {
-        console.log("Invalid year (1900 - Current Year)");
-        response_date.textContent = "Invalid year (1900 - Current Year)";
-
-        return false;
-
-    }
-    if (parseInt(year, 10) > (currentYear - 18)) {
-        console.log("You must be +18");
-        response_date.textContent = "You must be +18";
-
-        return false;
-    }
-
-    console.log("Valid Date");
-    response_date.textContent = "✅";
-    required_date.classList.toggle("hidden");
+    response.textContent = "✅";
+    required.classList.add("hidden");
     return true;
 }
 
+// Validação Personality (mínimo 1)
+export function validarPersonality() {
+    const required = document.querySelector('#required-text-personality');
+    const response = document.querySelector('#response-text-personality');
+    const selected = getCheckedValues('personality');
 
-
-function validarCPF(cpf) {
-
-    if (required_CPF.classList.contains("hidden")) {
-        required_CPF.classList.toggle("hidden");
-        response_CPF.textContent = "";
+    if (required.classList.contains("hidden")) {
+        required.classList.remove("hidden");
+        response.textContent = "";
     }
 
-    cpf = cpf.replace(/\D/g, '');
-
-    if (cpf.length !== 11) return false;
-    if (/^(\d)\1{10}$/.test(cpf)) {
-        console.log("numeros repetidos")
-        response_CPF.textContent = "repeated numbers";
+    if (selected.length < 1) {
+        response.textContent = "Select at least 1 personality trait";
         return false;
     }
 
-    let soma = 0;
-    // 1 digit
-    for (let i = 0; i < 9; i++) {
-        soma += parseInt(cpf.charAt(i) * (10 - i));
-    }
-    let resto = (soma * 10) % 11
-    if (resto === 10 || resto === 11) resto = 0;
-    if (parseInt(cpf.charAt(9)) !== resto) {
-        console.log('1º digito inválido');
-        response_CPF.textContent = "1º digit invalid";
-        return false;
-    }
-
-    soma = 0;
-    // 2 digit
-    for (let i = 0; i < 10; i++) {
-        soma += parseInt(cpf.charAt(i) * (11 - i));
-    }
-    resto = (soma * 10) % 11;
-    if (resto === 11 || resto === 10) resto = 0;
-    if (parseInt(cpf.charAt(10)) !== resto) {
-        console.log('2º digito inválido')
-        response_CPF.textContent = "2º digit invalid";
-        return false;
-    };
-
-    console.log("cpf valido");
-    response_CPF.textContent = "✅";
-    required_CPF.classList.toggle("hidden")
+    response.textContent = "✅";
+    required.classList.add("hidden");
     return true;
-
 }
 
+// Validação Main Skill (exatamente 1)
+export function validarMainSkill() {
+    const required = document.querySelector('#required-text-skill');
+    const response = document.querySelector('#response-text-skill');
+    const selected = getCheckedValues('main-skill');
 
+    if (required.classList.contains("hidden")) {
+        required.classList.remove("hidden");
+        response.textContent = "";
+    }
 
+    if (selected.length !== 1) {
+        response.textContent = "Select exactly 1 main skill";
+        return false;
+    }
+
+    response.textContent = "✅";
+    required.classList.add("hidden");
+    return true;
+}
+
+// Validação Favorite Food (mínimo 1)
+export function validarFavoriteFood() {
+    const required = document.querySelector('#required-text-food');
+    const response = document.querySelector('#response-text-food');
+    const selected = getCheckedValues('favorite-food');
+
+    if (required.classList.contains("hidden")) {
+        required.classList.remove("hidden");
+        response.textContent = "";
+    }
+
+    if (selected.length < 1) {
+        response.textContent = "Select at least 1 favorite food";
+        return false;
+    }
+
+    response.textContent = "✅";
+    required.classList.add("hidden");
+    return true;
+}
+// Interests
+document.querySelectorAll('input[name="interests"]').forEach(cb => {
+    cb.addEventListener('change', validarInterests);
+});
+
+// Personality
+document.querySelectorAll('input[name="personality"]').forEach(cb => {
+    cb.addEventListener('change', validarPersonality);
+});
+
+// Main Skill
+document.querySelectorAll('input[name="main-skill"]').forEach(cb => {
+    cb.addEventListener('change', validarMainSkill);
+});
+
+// Favorite Food
+document.querySelectorAll('input[name="favorite-food"]').forEach(cb => {
+    cb.addEventListener('change', validarFavoriteFood);
+});

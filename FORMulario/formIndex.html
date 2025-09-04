@@ -14,7 +14,7 @@
 <body>
     <section class="forms">
         <section class="register">
-            <form>
+            <form id="formUser">
                 <div class="form-header">
                     <p class="form-title">Register</p>
                 </div>
@@ -88,7 +88,7 @@
             <div class="dinocat-slider">
                 <div class="dinocat-track" id="dinocat-track">
                     <!-- Os cards serão gerados aqui -->
-                    
+
                 </div>
             </div>
         </section>
@@ -98,16 +98,16 @@
             <div class="form-header">
                 <p class="form-title">Register</p>
             </div>
-            <div class="inputs-area">
-
+            <form class="inputs-area">
+            
                 <div class="dinocat-card">
-                    <divdinocat_imgandtext class="dinocat-img-text"><img class="dinocat-img"
+                    <div class="dinocat-img-text"><img class="dinocat-img"
                             src="/FORMulario/assets/imgs/jhonnyssauro.jpg" alt="Jhonnyssauro">
                         <div class="dinocat-text-div">
                             <p class="dinocat-name">Jhonnyssauro</p>
                             <p class="dinocat-description">Jhonny versao dinossauro</p>
                         </div>
-                    </divdinocat_imgandtext><button class="dinocat-choose">Choose</button>
+                    </div>
                 </div>
 
                 <div class="inputs-pets">
@@ -201,9 +201,24 @@
                         </div>
                     </div>
 
-
                 </div>
-            </div>
+                <div style="display: flex; flex-direction: column; gap: 40px">
+                    <div class="input">
+                        <div class="input-header">
+                            <p class="label-text" id="label-text-description">Describe your love to dinocats</p>
+                        </div>
+
+                        <div class="input-icon">
+                            <img class="icon hidden" src="" alt="">
+                            <input type="text" id="description-input-pet" placeholder="i love dinocats">
+                        </div>
+                    </div>
+                    <div class="buttons-div">
+                        <button class="button cancel-button" id="formPetsCancelButton" type="button">Cancel</button>
+                        <button class="button create-button" id="formPetsCreateButton" type="submit">Register</button>
+                    </div>
+                </div>
+            </form>
         </section>
     </section>
 

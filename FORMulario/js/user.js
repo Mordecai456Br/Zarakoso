@@ -12,7 +12,7 @@ class User {
     }
 
     static generateId() {
-        return `element_${id++}`
+        return id++;
     }
 
     static pushUser(name, birthday, cpf, description) {

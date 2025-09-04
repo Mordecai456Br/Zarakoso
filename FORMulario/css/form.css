@@ -34,11 +34,12 @@ body {
     display: flex;
     justify-content: start;
     align-items: start;
-    gap: 80px;
+    gap: 0px;
+    margin-bottom: 40px;
 }
 
 
-form {
+#formUser {
     display: flex;
     min-height: 40rem;
     height: 600px;
