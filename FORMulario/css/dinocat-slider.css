@@ -13,22 +13,7 @@
     padding: 0rem 2rem;
     
 }
-/*.dinocat-track {
-    display: flex;
-    padding:40px;
-    will-change: transform;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    align-items: center;
-    justify-content: center;
-    height: 652px;
-     border-radius: 1.125rem;
-    background-color: rgb(255, 255, 255);
-    border: 2px solid #eeeeee;
-    
-}
-*/
+
 .dinocat-track {
      display: flex;
     gap: 1rem;

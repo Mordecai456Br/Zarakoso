@@ -2,7 +2,7 @@
     color: #3F3F3F;
     font-family: Inter;
     font-size: 1.15rem;
-    /* 0.9375rem * 1.15 */
+ 
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -17,7 +17,7 @@ h4,
 h5,
 h6 {
     margin: 0rem;
-    /* 0.375rem * 1.15 */
+   
 }
 
 body {
@@ -45,16 +45,16 @@ body {
     height: 600px;
     max-width: 500px;
     width: 50%;
-    /* 36.328125rem * 1.15 */
+    
     flex-direction: column;
     align-items: center;
     justify-content: start;
     gap: 1.725rem;
-    /* 1.5rem * 1.15 */
+   
     flex-shrink: 0;
 
     border-radius: 1.29375rem;
-    /* 1.125rem * 1.15 */
+  
     border: 2px solid #D7D7D7;
     background: #FFF;
 }
@@ -63,7 +63,7 @@ body {
     color: #767676;
     font-family: Inter;
     font-size: 1.725rem;
-    /* 1.5rem * 1.15 */
+    
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -72,25 +72,25 @@ body {
 .form-header {
     display: flex;
     padding: 1.078125rem;
-    /* 0.9375rem * 1.15 */
+   
     align-items: center;
     gap: 0.5390625rem;
-    /* 0.46875rem * 1.15 */
+ 
 
     align-self: stretch;
     width: auto;
     border-radius: 1.29375rem 1.29375rem 0 0;
-    /* 1.125rem * 1.15 */
+    
     border-bottom: 2px solid #D7D7D7;
     background: #FFF;
 }
 
 input {
-    border: none;        /* remove borda padrão */
-    background: none;    /* remove fundo padrão */
-    outline: none;       /* remove contorno ao focar */
-    color: inherit;      /* mantém a cor herdada */
-    font: inherit;       /* mantém a fonte herdada */
+    border: none;        
+    background: none;    
+    outline: none;       
+    color: inherit;      
+    font: inherit;       
     width: 100%;
 }
 
@@ -98,16 +98,15 @@ input {
 .inputs-div {
     display: flex;
     height: auto;
-    /* 25.6875rem * 1.15 */
+   
     padding: 1rem 2rem;
-    /* menos lateral e vertical */
+    
     gap: 1.2rem;
-    /* menos espaço entre campos */
-    /* 0.9375rem 2.34375rem * 1.15 */
+   
     flex-direction: column;
     align-items: flex-start;
 
-    /* 1.5rem * 1.15 */
+    
     flex-shrink: 0;
 }
 
@@ -120,7 +119,7 @@ input {
 .input-header {
     display: flex;
     align-items: center;
-    /* 0.5625rem * 1.15 */
+   
     justify-content: space-between;
     align-self: stretch;
 }
@@ -132,7 +131,7 @@ input {
 
 .label-text {
     font-size: 1.29375rem;
-    /* 1.125rem * 1.15 */
+    
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -141,7 +140,7 @@ input {
 .required-text {
     color: #3CA0F8;
     font-size: 0.8625rem;
-    /* 0.75rem * 1.15 */
+   
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -150,7 +149,7 @@ input {
 .response-text {
     color: #3CA0F8;
     font-size: 0.8625rem;
-    /* 0.75rem * 1.15 */
+ 
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -159,26 +158,26 @@ input {
 .input-icon {
     display: flex;
     width: 21.5625rem;
-    /* 18.75rem * 1.15 */
+   
     height: 0.1725rem;
-    /* 0.15rem * 1.15 */
+   
     padding: 1.078125rem;
-    /* 0.9375rem * 1.15 */
+   
     align-items: center;
     gap: 0.5390625rem;
-    /* 0.46875rem * 1.15 */
+    
 
     border-radius: 0.646875rem;
-    /* 0.5625rem * 1.15 */
+   
     border: 1px solid #D7D7D7;
     background: #FFF;
 }
 
 .icon {
     width: 1.6171875rem;
-    /* 1.40625rem * 1.15 */
+   
     height: 1.6171875rem;
-    /* 1.40625rem * 1.15 */
+   
     flex-shrink: 0;
 
 }

@@ -37,14 +37,34 @@ function gerarDinocards(dinos) {
             button.textContent = 'Choose';
 
             button.addEventListener('click', () => {
+                const dinoPetCard = document.querySelector('#dinoPet');
+                if (!dinoPetCard) return;
+
+               
+                const img = dinoPetCard.querySelector('.dinocat-img');
+                if (img) {
+                    img.src = dino.img;
+                    img.alt = dino.name;
+                }
+
+              
+                const nameEl = dinoPetCard.querySelector('.dinocat-name');
+                if (nameEl) nameEl.textContent = dino.name;
+
+                
+                const descEl = dinoPetCard.querySelector('.dinocat-description');
+                if (descEl) descEl.textContent = dino.description;
+
+                
                 const nameInput = document.querySelector('#name-input-dinocat');
                 if (nameInput) {
                     nameInput.value = dino.name;
                     document.querySelector('#required-text-dinocat-name')
-                    .classList.add('hidden')
+                        .classList.add('hidden');
                     nameInput.dispatchEvent(new Event('input'));
                 }
             });
+
             card.appendChild(button);
 
             container.appendChild(card);

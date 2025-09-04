@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function validarName() {
         const value = nameInput.value.trim();
-
+        const cardName = document.querySelector('#dinocat-name-pet').textContent = value;
         if (!value || value.length < 3) {
             nameResponse.textContent = "Name must be at least 3 characters";
             nameRequired.classList.remove("hidden");
