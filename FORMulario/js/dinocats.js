@@ -78,6 +78,7 @@ const dinos = [
     { name: "Pepessauro", description: "Pe de pano anos atras", img: "/FORMulario/assets/imgs/pepessauro.jpg" },
     { name: "Superlaserssauro", description: "Raios de laser pelos olhos", img: "/FORMulario/assets/imgs/superlaserssauro.jpg" },
     { name: "Escargotssauro", description: "Dinossauro sabor escargot", img: "/FORMulario/assets/imgs/escargotssauro.jpg" },
+    { name: "Dinocat Pergolano", description: "Dinossauro sabor vinho pergola", img: "/FORMulario/assets/imgs/pergolano.webp" },
     { name: "Petliopatas", description: "Solta pétalas peludas", img: "/FORMulario/assets/imgs/petliopatas.jpg" },
     { name: "Gat-rex", description: "O Clássico T-Rex esta de volta.. minhando", img: "/FORMulario/assets/imgs/gat-rex.jpg" },
     { name: "José", description: "Raio ultrajante pela boca", img: "/FORMulario/assets/imgs/jose.jpg" },
