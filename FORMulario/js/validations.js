@@ -60,14 +60,13 @@ cpfInput.addEventListener("input", function () {
     validarCPF(cpf);
 })
 
-const required_text_date = document.querySelector('.required-text-date');
+
 const required_date = document.querySelector('#required-text-date');
 const response_date = document.querySelector('#response-text-date');
 
 
 const required_CPF = document.querySelector('#required-text-CPF');
 const response_CPF = document.querySelector('#response-text-CPF');
-
 
 
 
