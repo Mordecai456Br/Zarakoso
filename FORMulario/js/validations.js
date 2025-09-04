@@ -8,7 +8,6 @@ const nameResponse = document.querySelector('#response-text-name');
 const cancelButton = document.querySelector('#formUsersCancelButton')
 
 
-import { validarCPF, validarDate } from '../js/validations2.js';
 
 
 cancelButton.addEventListener("click", function () {
@@ -70,7 +69,7 @@ const required_CPF = document.querySelector('#required-text-CPF');
 const response_CPF = document.querySelector('#response-text-CPF');
 
 
-export { validarCPF, validarDate }
+
 
 export function validarName(name) {
     const nameRequired = document.querySelector('#required-text-name');
@@ -92,7 +91,7 @@ export function validarName(name) {
 }
 
 
-function validarDate(date) {
+export function validarDate(date) {
 
     if (required_date.classList.contains("hidden")) {
         required_date.classList.toggle("hidden");
@@ -139,7 +138,7 @@ function validarDate(date) {
 
 
 
-function validarCPF(cpf) {
+export function validarCPF(cpf) {
 
     if (required_CPF.classList.contains("hidden")) {
         required_CPF.classList.toggle("hidden");

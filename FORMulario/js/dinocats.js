@@ -35,6 +35,16 @@ function gerarDinocards(dinos) {
             const button = document.createElement('button');
             button.classList.add('dinocat-choose');
             button.textContent = 'Choose';
+
+            button.addEventListener('click', () => {
+                const nameInput = document.querySelector('#name-input-dinocat');
+                if (nameInput) {
+                    nameInput.value = dino.name;
+                    document.querySelector('#required-text-dinocat-name')
+                    .classList.add('hidden')
+                    nameInput.dispatchEvent(new Event('input'));
+                }
+            });
             card.appendChild(button);
 
             container.appendChild(card);

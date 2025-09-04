@@ -98,7 +98,7 @@
             <div class="form-header">
                 <p class="form-title">Register</p>
             </div>
-            <form class="inputs-area">
+            <form class="inputs-area" id="formPet">
             
                 <div class="dinocat-card">
                     <div class="dinocat-img-text"><img class="dinocat-img"
@@ -118,11 +118,11 @@
                                 <p class="label-text" id="label-text-dinocatname">Dinocat name</p>
                                 <p class="required-text" id="required-text-dinocat-name">*</p>
                             </div>
-                            <p class="response-text" id="response-text-dinocat-name">name is required</p>
+                            <p class="response-text" id="response-text-dinocat-name"></p>
                         </div>
                         <div class="input-icon">
                             <img class="icon hidden" src="" alt="">
-                            <input type="text" id="name-input" placeholder="Dinocat Pergolano">
+                            <input type="text" id="name-input-dinocat" placeholder="Dinocat Pergolano">
                         </div>
                     </div>
 
@@ -130,7 +130,7 @@
                         <div class="input-header">
                             <div class="name-and-required">
                                 <p class="label-text" id="label-text-interests">Interests</p>
-                                <p class="required-text">*</p>
+                                <p class="required-text" id="required-text-dinocat-interests">*</p>
                             </div>
                             <p class="response-text" id="response-text-interests"></p>
                         </div>
@@ -146,7 +146,7 @@
                         <div class="input-header">
                             <div class="name-and-required">
                                 <p class="label-text" id="label-text-personality">Personality</p>
-                                <p class="required-text">*</p>
+                                <p class="required-text" id="required-text-dinocat-personality">*</p>
                             </div>
                             <p class="response-text" id="response-text-personality"></p>
                         </div>
@@ -167,9 +167,9 @@
                         <div class="input-header">
                             <div class="name-and-required">
                                 <p class="label-text" id="label-text-skill">Main Skill</p>
-                                <p class="required-text">*</p>
+                                <p class="required-text" id="required-text-dinocat-main-skill">*</p>
                             </div>
-                            <p class="response-text" id="response-text-skill"></p>
+                            <p class="response-text" id="response-text-main-skill"></p>
                         </div>
 
                         <div class="input-icon-pets" style="flex-wrap: wrap; display: flex; gap: 0.5rem;">
@@ -185,9 +185,9 @@
                         <div class="input-header">
                             <div class="name-and-required">
                                 <p class="label-text" id="label-text-food">Favorite Food</p>
-                                <p class="required-text">*</p>
+                                <p class="required-text" id="required-text-dinocat-favorite-food">*</p>
                             </div>
-                            <p class="response-text" id="response-text-food"></p>
+                            <p class="response-text" id="response-text-favorite-food"></p>
                         </div>
 
                         <div class="input-icon-pets" style="flex-wrap: wrap; display: flex; gap: 0.5rem;">
@@ -224,6 +224,7 @@
 
 </body>
 <script type="module" src="/FORMulario/js/validations.js"></script>
+<script type="module" src="/FORMulario/js/validations2.js"></script>
 <script type="module" src="/FORMulario/js/dinocats.js"></script>
 <script type="module" src="/FORMulario/js/dinocatsSlider.js"></script>
 <script type="module" src="/FORMulario/js/forms.js"></script>

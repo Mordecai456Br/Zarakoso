@@ -1,108 +1,134 @@
-// Função genérica para capturar checkboxes selecionados
-function getCheckedValues(name) {
-    return Array.from(document.querySelectorAll(`input[name="${name}"]:checked`))
-        .map(cb => cb.value);
-}
+document.addEventListener('DOMContentLoaded', () => {
 
-// Validação Interests (mínimo 1)
-export function validarInterests() {
-    const required = document.querySelector('#required-text-interests');
-    const response = document.querySelector('#response-text-interests');
-    const selected = getCheckedValues('interests');
-
-    if (required.classList.contains("hidden")) {
-        required.classList.remove("hidden");
-        response.textContent = "";
+    // ======== FUNÇÕES AUXILIARES ========
+    function getCheckedValues(name) {
+        return Array.from(document.querySelectorAll(`input[name="${name}"]:checked`))
+            .map(input => input.value);
     }
 
-    if (selected.length < 1) {
-        response.textContent = "Select at least 1 interest";
-        return false;
+    // ======== VALIDAÇÃO DE NOME ========
+    const nameInput = document.querySelector('#name-input-dinocat');
+    const nameRequired = document.querySelector('#required-text-dinocat-name');
+    const nameResponse = document.querySelector('#response-text-dinocat-name');
+
+    function validarName() {
+        const value = nameInput.value.trim();
+
+        if (!value || value.length < 3) {
+            nameResponse.textContent = "Name must be at least 3 characters";
+            nameRequired.classList.remove("hidden");
+            return false;
+        }
+
+        nameResponse.textContent = "✅";
+        nameRequired.classList.add("hidden");
+        return true;
     }
 
-    response.textContent = "✅";
-    required.classList.add("hidden");
-    return true;
-}
+    nameInput.addEventListener('input', validarName);
 
-// Validação Personality (mínimo 1)
-export function validarPersonality() {
-    const required = document.querySelector('#required-text-personality');
-    const response = document.querySelector('#response-text-personality');
-    const selected = getCheckedValues('personality');
+    // ======== VALIDAÇÃO DE CHECKBOXES ========
+    const checkboxGroups = [
+        { name: 'interests', requiredEl: document.querySelector('#required-text-dinocat-interests') },
+        { name: 'personality', requiredEl: document.querySelector('#required-text-dinocat-personality') },
+        { name: 'favorite-food', requiredEl: document.querySelector('#required-text-dinocat-favorite-food') }
+    ];
 
-    if (required.classList.contains("hidden")) {
-        required.classList.remove("hidden");
-        response.textContent = "";
+    function validarCheckboxGroup(name, min = 1) {
+        const selected = getCheckedValues(name);
+        const responseEl = document.querySelector(`#response-text-${name}`);
+        const requiredEl = checkboxGroups.find(g => g.name === name)?.requiredEl;
+
+        if (!responseEl) {
+            console.warn(`Elemento #response-text-${name} não encontrado no DOM.`);
+            return false;
+        }
+
+        if (selected.length < min) {
+            responseEl.textContent = `Selecione pelo menos ${min} opção${min > 1 ? 'es' : ''}.`;
+            if (requiredEl) requiredEl.classList.remove("hidden");
+            return false;
+        }
+
+        responseEl.textContent = "✅";
+        if (requiredEl) requiredEl.classList.add("hidden");
+        return true;
     }
 
-    if (selected.length < 1) {
-        response.textContent = "Select at least 1 personality trait";
-        return false;
+    // Atualização em tempo real
+    checkboxGroups.forEach(group => {
+        document.querySelectorAll(`input[name="${group.name}"]`).forEach(input => {
+            input.addEventListener('change', () => validarCheckboxGroup(group.name));
+        });
+    });
+
+    // ======== VALIDAÇÃO DE MAIN SKILL ========
+    const mainSkillRequired = document.querySelector('#required-text-dinocat-main-skill');
+    function validarMainSkill() {
+        const skills = getCheckedValues('main-skill');
+        const responseSkill = document.querySelector('#response-text-main-skill');
+
+        if (!responseSkill) {
+            console.warn('Elemento #response-text-main-skill não encontrado no DOM.');
+            return false;
+        }
+
+        if (skills.length !== 1) {
+            responseSkill.textContent = "Selecione exatamente 1 habilidade principal.";
+            if (mainSkillRequired) mainSkillRequired.classList.remove("hidden");
+            return false;
+        }
+
+        responseSkill.textContent = "✅";
+        if (mainSkillRequired) mainSkillRequired.classList.add("hidden");
+        return true;
     }
 
-    response.textContent = "✅";
-    required.classList.add("hidden");
-    return true;
-}
+    document.querySelectorAll(`input[name="main-skill"]`).forEach(input => {
+        input.addEventListener('change', validarMainSkill);
+    });
 
-// Validação Main Skill (exatamente 1)
-export function validarMainSkill() {
-    const required = document.querySelector('#required-text-skill');
-    const response = document.querySelector('#response-text-skill');
-    const selected = getCheckedValues('main-skill');
+    // ======== SUBMIT ========
+    const form = document.querySelector('#formPet');
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
 
-    if (required.classList.contains("hidden")) {
-        required.classList.remove("hidden");
-        response.textContent = "";
-    }
+        const description = document.querySelector('#description-input-pet').value.trim();
+        const interests = getCheckedValues('interests');
+        const personality = getCheckedValues('personality');
+        const skills = getCheckedValues('main-skill');
+        const food = getCheckedValues('favorite-food');
 
-    if (selected.length !== 1) {
-        response.textContent = "Select exactly 1 main skill";
-        return false;
-    }
+        const isNameValid = validarName();
+        const isInterestsValid = validarCheckboxGroup('interests');
+        const isPersonalityValid = validarCheckboxGroup('personality');
+        const isSkillValid = validarMainSkill();
+        const isFoodValid = validarCheckboxGroup('favorite-food');
 
-    response.textContent = "✅";
-    required.classList.add("hidden");
-    return true;
-}
+        if (isNameValid && isInterestsValid && isPersonalityValid && isSkillValid && isFoodValid) {
+            const newPet = {
+                name: nameInput.value.trim(),
+                description,
+                interests,
+                personality,
+                skills,
+                food
+            };
+            console.log('Pet registrado com sucesso:', newPet);
+            form.reset();
 
-// Validação Favorite Food (mínimo 1)
-export function validarFavoriteFood() {
-    const required = document.querySelector('#required-text-food');
-    const response = document.querySelector('#response-text-food');
-    const selected = getCheckedValues('favorite-food');
+            // Reset visual dos campos
+            nameRequired.classList.remove("hidden");
+            nameResponse.textContent = "";
 
-    if (required.classList.contains("hidden")) {
-        required.classList.remove("hidden");
-        response.textContent = "";
-    }
+            checkboxGroups.concat([{ name: 'main-skill', requiredEl: mainSkillRequired }]).forEach(group => {
+                const responseEl = document.querySelector(`#response-text-${group.name}`);
+                if (responseEl) responseEl.textContent = "";
+                if (group.requiredEl) group.requiredEl.classList.remove("hidden");
+            });
+        } else {
+            console.log('Formulário inválido. Corrija os erros antes de enviar.');
+        }
+    });
 
-    if (selected.length < 1) {
-        response.textContent = "Select at least 1 favorite food";
-        return false;
-    }
-
-    response.textContent = "✅";
-    required.classList.add("hidden");
-    return true;
-}
-// Interests
-document.querySelectorAll('input[name="interests"]').forEach(cb => {
-    cb.addEventListener('change', validarInterests);
-});
-
-// Personality
-document.querySelectorAll('input[name="personality"]').forEach(cb => {
-    cb.addEventListener('change', validarPersonality);
-});
-
-// Main Skill
-document.querySelectorAll('input[name="main-skill"]').forEach(cb => {
-    cb.addEventListener('change', validarMainSkill);
-});
-
-// Favorite Food
-document.querySelectorAll('input[name="favorite-food"]').forEach(cb => {
-    cb.addEventListener('change', validarFavoriteFood);
 });
